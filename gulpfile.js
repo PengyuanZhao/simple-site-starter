@@ -10,22 +10,17 @@ var postcss = require('gulp-postcss');
 var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglifyjs');
+var uglify = require('gulp-uglify');
 
 gulp.task('sass', function () {
   return gulp.src('./sass/app.scss')
     .pipe(
       sass({
-        // includePaths: 'node_modules/bootstrap/scss/',
         outputStyle: 'compressed'
       }).on('error', sass.logError)
     )
     .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('./public/css'));
-});
-
-gulp.task('watch:sass', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
 gulp.task('js', function() {
@@ -40,6 +35,10 @@ gulp.task('js', function() {
     .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./public/js/'));
+});
+
+gulp.task('watch:sass', function () {
+  gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
 gulp.task('watch:js', function () {
