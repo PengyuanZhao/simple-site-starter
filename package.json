@@ -1,7 +1,7 @@
 {
-  "name": "www.pengyuanzhao.com",
+  "name": "simple-site-starter",
   "version": "1.0.0",
-  "description": "Pengyuan Zhao's Portfolio",
+  "description": "Simple Site Starter",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {

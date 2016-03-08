@@ -12,3 +12,5 @@ Gulp Tasks:
 `gulp watch:sass`
 
 `gulp watch:js`
+
+`gulp watch`
